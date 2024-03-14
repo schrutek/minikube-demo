@@ -16,3 +16,6 @@ jobs:
         run: |
          mvn -B package --file pom.xml
          ls -lh target
+         cp src/main/docker/Dockerfile ./target/
+         docker build --tag ghcr.io/schrutek/backend:latest ./target
+
